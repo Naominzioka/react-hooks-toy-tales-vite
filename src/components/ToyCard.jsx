@@ -1,4 +1,4 @@
-function ToyCard({ toy, onDeleteToy }) {
+function ToyCard({ toy, onDeleteToy, onUpdateToy }) {
 const {id, name, image, likes} = toy;
 
 const handleDelete = () => {
@@ -13,6 +13,24 @@ const handleDelete = () => {
       .catch(error => console.log(error.message))
   
 }
+function handleLikes() {
+  const newLikes = likes + 1;
+
+  fetch(`http://localhost:3001/toys/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        likes: newLikes, // Send only the key you want to change
+      }),
+    })
+      .then((r) => r.json())
+      .then((updatedToy) => {
+        onUpdateToy(updatedToy); // Update the state in App.js
+      })
+      .catch(error => console.error("My fetch error:", error))
+}
 
   return (
     <div className="card" data-testid="toy-card">
@@ -24,7 +42,7 @@ const handleDelete = () => {
         className="toy-avatar"
       />
       <p>{likes} Likes </p>
-      <button className="like-btn">Like {"<3"}</button>
+      <button className="like-btn" onClick={handleLikes}>Like {"<3"}</button>
       <button className="del-btn" onClick={handleDelete}>Donate to GoodWill</button>
     </div>
   );

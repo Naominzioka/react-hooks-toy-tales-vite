@@ -15,6 +15,7 @@ function App() {
       .then(r => r.json())
       .then(data => setToys(data));
     setLoading(false)
+    
   }, []);
 
   function handleClick() {
@@ -34,6 +35,17 @@ function App() {
     setToys(updatedToys)
   }
 
+  function handleUpdateToy(updatedToy) {
+  //.map() goes through  toys one by one in their current order
+  const updatedToys = toys.map((toy) =>
+    //if id matches, swap the old toy for the new one from the server
+  //if id doesn't match return original toy
+    toy.id === updatedToy.id ? updatedToy : toy
+  );
+  //replace state with new array mantaining same exact order
+  setToys(updatedToys);
+}
+
 
   return (
     <>
@@ -43,7 +55,7 @@ function App() {
         <button onClick={handleClick}>Add a Toy</button>
       </div>
       {loading ? <h2>Loading...</h2> :
-        <ToyContainer toys={toys} onDeleteToy={handleDeleteToy} />}
+        <ToyContainer toys={toys} onDeleteToy={handleDeleteToy} onUpdateToy={handleUpdateToy} />}
     </>
   );
 }

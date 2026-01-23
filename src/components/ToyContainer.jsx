@@ -1,7 +1,7 @@
 
 import ToyCard from "./ToyCard";
 
-function ToyContainer({ toys, onDeleteToy }) {
+function ToyContainer({ toys, onDeleteToy, onUpdateToy }) {
 
   return (
     <div id="toy-collection">{/* Render the collection of ToyCards */}
@@ -9,6 +9,7 @@ function ToyContainer({ toys, onDeleteToy }) {
         key={toy.id}
         toy={toy}
         onDeleteToy={onDeleteToy}
+        onUpdateToy={onUpdateToy}
       />
       )}
     </div>
