@@ -28,6 +28,13 @@ function App() {
     });
   }
 
+
+  function handleDeleteToy(deletedToyId) {
+    const updatedToys = toys.filter((toy) => toy.id !== deletedToyId);
+    setToys(updatedToys)
+  }
+
+
   return (
     <>
       <Header />
@@ -36,7 +43,7 @@ function App() {
         <button onClick={handleClick}>Add a Toy</button>
       </div>
       {loading ? <h2>Loading...</h2> :
-        <ToyContainer toys={toys} />}
+        <ToyContainer toys={toys} onDeleteToy={handleDeleteToy} />}
     </>
   );
 }
