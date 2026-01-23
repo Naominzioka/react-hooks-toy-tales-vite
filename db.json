@@ -37,21 +37,15 @@
       "likes": 2
     },
     {
-      "id": "7",
-      "name": "Hamm",
-      "image": "https://cdn140.picsart.com/244090226021212.png?r1024x1024",
+      "id": "b55a",
+      "name": "Moana",
+      "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTq7M1d9ljrLzBxmn-vxceGdGGgoD8vg6ITrscZYUrHPANgz7-E",
       "likes": 0
     },
     {
-      "id": "8",
-      "name": "Little Green Men",
-      "image": "http://www.pngmart.com/files/3/Toy-Story-Alien-PNG-File.png",
-      "likes": -2
-    },
-    {
-      "id": "603c",
-      "name": "Moana",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5JAR7ClwadiepmEcw_xgxxSqbtlOZJEnCFAadKRJtaxWrz5rXv1vSfX3NFPq5QIy08u9HKw&s=10",
+      "id": "c290",
+      "name": "Ferdinand",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBCald0JxPpgfwCkFOWz1yYV0cjN8T8Ryn8Q&s",
       "likes": 0
     }
   ]
